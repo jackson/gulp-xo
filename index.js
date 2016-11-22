@@ -26,7 +26,7 @@ module.exports = opts => {
 		let report;
 
 		try {
-			report = xo.lintText(file.contents.toString(), {filename: file.relative});
+			report = xo.lintText(file.contents.toString(), {filename: file.path});
 		} catch (err) {
 			this.emit('error', new gutil.PluginError('gulp-xo', err, {fileName: file.path}));
 		}
